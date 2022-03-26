@@ -7,7 +7,7 @@
 
 package ai.starwhale.mlops.agent.taskexecutor;
 
-import ai.starwhale.mlops.agent.container.ContainerClient;
+import ai.starwhale.mlops.agent.container.impl.ContainerClient;
 import ai.starwhale.mlops.agent.container.ImageConfig;
 import ai.starwhale.mlops.api.ReportApi;
 import ai.starwhale.mlops.domain.task.Task.TaskStatus;
@@ -25,7 +25,6 @@ import java.util.Optional;
 import java.util.Queue;
 import java.util.Vector;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 public interface TaskSource {

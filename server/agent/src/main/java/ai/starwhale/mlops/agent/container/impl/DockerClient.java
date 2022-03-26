@@ -1,7 +1,5 @@
 package ai.starwhale.mlops.agent.container.impl;
 
-import ai.starwhale.mlops.agent.container.ContainerClient;
-
 import ai.starwhale.mlops.agent.container.ImageConfig;
 import com.github.dockerjava.transport.DockerHttpClient;
 import java.util.Optional;

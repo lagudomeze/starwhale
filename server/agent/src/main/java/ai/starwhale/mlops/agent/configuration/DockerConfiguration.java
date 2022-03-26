@@ -7,20 +7,27 @@
 
 package ai.starwhale.mlops.agent.configuration;
 
+import ai.starwhale.mlops.agent.taskexecutor.AgentProperties;
 import com.github.dockerjava.core.DefaultDockerClientConfig;
 import com.github.dockerjava.core.DockerClientConfig;
 import com.github.dockerjava.httpclient5.ApacheDockerHttpClient;
 import com.github.dockerjava.transport.DockerHttpClient;
 import java.time.Duration;
+
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EnableConfigurationProperties(DockerProperties.class)
 public class DockerConfiguration {
 
     @Bean
-    public DockerHttpClient dockerClient() {
-        DockerClientConfig config = DefaultDockerClientConfig.createDefaultConfigBuilder().build();
+    public DockerHttpClient dockerHttpClient(DockerProperties properties) {
+        DockerClientConfig config = DefaultDockerClientConfig
+                .createDefaultConfigBuilder()
+                .withDockerHost(properties.getHost())
+                .build();
         return new ApacheDockerHttpClient.Builder()
             .dockerHost(config.getDockerHost())
             .sslConfig(config.getSSLConfig())

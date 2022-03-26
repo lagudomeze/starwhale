@@ -14,7 +14,7 @@ import ai.starwhale.mlops.api.protocol.report.ReportResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@FeignClient(name = "reportApi")
+@FeignClient(name = "reportApi", url = "${sw.agent.report.url}")
 public interface ReportHttpClient extends ReportApi {
     @PostMapping("api/v1/report")
     @Override

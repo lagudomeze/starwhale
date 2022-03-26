@@ -7,7 +7,7 @@
 
 package ai.starwhale.mlops.agent.taskexecutor;
 
-import ai.starwhale.mlops.agent.container.ContainerClient;
+import ai.starwhale.mlops.agent.container.impl.ContainerClient;
 import ai.starwhale.mlops.agent.taskexecutor.TaskSource.TaskAction;
 import ai.starwhale.mlops.agent.taskexecutor.TaskSource.TaskAction.Context;
 import ai.starwhale.mlops.agent.taskexecutor.TaskSource.TaskAction.SelectOneToExecute;
@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
  * ---------------------------------> canceled
  */
 @Slf4j
-@Component
+@Component("ml_task_executor")
 public class TaskExecutor {
 
     private final ContainerClient containerClient;

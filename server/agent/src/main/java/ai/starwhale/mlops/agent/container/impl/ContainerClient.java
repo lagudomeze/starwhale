@@ -1,4 +1,6 @@
-package ai.starwhale.mlops.agent.container;
+package ai.starwhale.mlops.agent.container.impl;
+
+import ai.starwhale.mlops.agent.container.ImageConfig;
 
 import java.util.Optional;
 

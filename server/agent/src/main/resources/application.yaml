@@ -5,3 +5,7 @@ sw:
     task:
       infoPath: ${SW_TASK_INFO_PATH:/opt/starwhale/tasks/}
       resultPath: ${SW_TASK_RESULT_PATH:/opt/starwhale/taskResults/}
+    report:
+      url: ${SW_REPORT_URL:http://localhost:8082}
+    docker:
+      host: ${SW_DOCKER_HOST:unix:///var/run/docker.sock}
